@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\User;
 
 class UsersController extends Controller
 {
@@ -19,8 +20,29 @@ class UsersController extends Controller
      */
     public function create()
     {
-        //
+        return view ("formCreate");
     }
+
+    public function addUser(Request $request)
+    {
+      $request-> validate([
+        'name'=> 'required',
+        'firstname'=> 'required',
+        'password'=> 'required'
+      ]);
+
+      $user = new User();
+
+      $user->name = $request->name;
+      $user->firstname = $request->firstname;
+      $user->password = $request->password;
+
+      $user -> save();
+      return redirect ('/')->with('status', 'l\'utilisateur a bien été créé');
+
+    }
+
+
 
     /**
      * Store a newly created resource in storage.

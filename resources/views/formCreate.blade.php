@@ -1,6 +1,14 @@
 <main>
 
-  <form action="" method="POST">
+  @if (session('status'))
+    <div>{(session('status'))}</div>
+  @endif
+
+  <form action="/addUser" method="POST">
+  @csrf
+
+
+
     <label for="name">
       <input type="text" name="name" id="name" placeholder="your name">
     </label>
