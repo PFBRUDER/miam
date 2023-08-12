@@ -27,19 +27,28 @@ class UsersController extends Controller
     {
       $request-> validate([
         'name'=> 'required',
-        'firstname'=> 'required',
+        'email'=> 'required',
         'password'=> 'required'
       ]);
 
       $user = new User();
 
       $user->name = $request->name;
-      $user->firstname = $request->firstname;
+      $user->email = $request->email;
       $user->password = $request->password;
 
       $user -> save();
       return redirect ('/')->with('status', 'l\'utilisateur a bien été créé');
 
+    }
+
+    public function login()
+    {
+        
+
+        return view ("formLogin");
+
+        
     }
 
 

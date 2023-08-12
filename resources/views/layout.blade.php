@@ -10,7 +10,7 @@
     <h1>Miam App</h1>
     <div>
         <p><a href="/create">Create</a></p>
-        <p><a href="?action=read">Read</a></p>
+        <p><a href="/login">Login</a></p>
     </div>   
   </header>
   

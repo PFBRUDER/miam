@@ -13,11 +13,11 @@
       <input type="text" name="name" id="name" placeholder="your name">
     </label>
 
-    <label for="firstname">
-      <input type="text" name="firstname" id="firstname" placeholder="your firstname">
+    <label for="email">
+      <input type="text" name="email" id="email" placeholder="your email">
     </label>
 
-    <label for="firstname">
+    <label for="password">
       <input type="password" name="password" id="password" placeholder="your password">
     </label>
 
