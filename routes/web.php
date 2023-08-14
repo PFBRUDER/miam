@@ -15,8 +15,12 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+// Route::get('/', function () {
+//     return view('receipes.list');
+// });
+
 Route::get('/', function () {
-    return view('welcome');
+    return view('receipes.list');
 });
 
 Route::get('/dashboard', function () {
