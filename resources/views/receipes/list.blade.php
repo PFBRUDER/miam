@@ -28,8 +28,16 @@
     <div class=title style=text-align:center>      
       <h1>MIAM, le bon goût de chez vous</h1>
       <p>Partagez vos meilleures recettes</p>
+
+    
+      <a href="/add">Ajouter une recette</a>
+
+
     </div>
 
+    <div>
+
+    </div>
 
   </header>
 
