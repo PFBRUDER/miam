@@ -36,3 +36,6 @@ Route::middleware('auth')->group(function () {
 require __DIR__.'/auth.php';
 
 Route::get('/receipes', [ReceipesController::class, 'receipes_list']);
+Route::get('/add', [ReceipesController::class, 'add_receipe']);
+
+

@@ -10,7 +10,12 @@ class ReceipesController extends Controller
     {
         return view ('receipes.list');
     }
+    
+    public function add_receipe()
+    {
+        return view ('receipes.add');
 
+    }
         /**
      * Display a listing of the resource.
      */
@@ -27,11 +32,6 @@ class ReceipesController extends Controller
         // 
     }
 
-    public function add()
-    {
-        // 
-
-    }
 
     public function login()
     {
