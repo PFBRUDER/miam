@@ -73,7 +73,7 @@
       <button type="submit">Ajouter la recette</button>
 
       <hr>
-      <a href="/">Liste des recettes</a>
+      <a href="/">Revenir à la iste des recettes</a>
 
     </form>
 
