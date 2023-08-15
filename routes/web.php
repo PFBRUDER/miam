@@ -20,7 +20,9 @@ use Illuminate\Support\Facades\Route;
 // });
 
 Route::get('/', function () {
-    return view('receipes.list');
+    // return view('receipes.list');
+    return view('layout');
+
 });
 
 Route::get('/dashboard', function () {

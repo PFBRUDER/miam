@@ -9,7 +9,8 @@ class ReceipesController extends Controller
 {
     public function receipes_list()
     {
-        return view ('receipes.list');
+        $receipes = Receipes::all();
+        return view ('receipes.list', compact('receipes'));
     }
     
     public function add_receipe()
