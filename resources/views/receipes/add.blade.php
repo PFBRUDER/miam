@@ -37,11 +37,25 @@
   </header>
 
   <main>
-    <form action="" method="get">
+
+  @if (session('status'))
+    <div>{{ session('status') }}</div>
+  @endif
+
+  <ul>
+    @foreach ($errors->all() as $error)
+      <li> {{ $error }} </li>
+    @endforeach
+  </ul>
+
+
+    <!-- il faudra remettre en POST après -->
+    <form action="/add/traitement" method="get">
       @csrf
 
       <label for="user_id">
-        <input type="hidden" name="user_id" >
+        <!-- à remettre en hidden -->
+        <input type="text" name="user_id" >
       </label>
       <br>
       
@@ -65,15 +79,15 @@
       </label>
       <br>
       
-      <label for="ReceipeDescription">
-        <textarea name="ReceipeDescription" id="ReceipeDescription" cols="30" rows="10" placeholder="Your receipe description"></textarea>
+      <label for="receipeDescription">
+        <textarea name="receipeDescription" id="receipeDescription" cols="30" rows="10" placeholder="Your receipe description"></textarea>
       </label>
       <br>  
 
       <button type="submit">Ajouter la recette</button>
 
       <hr>
-      <a href="/">Revenir à la iste des recettes</a>
+      <a href="/">Revenir à la liste des recettes</a>
 
     </form>
 

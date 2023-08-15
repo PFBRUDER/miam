@@ -33,9 +33,9 @@
                   @auth
         <a href="/add">Ajouter une recette</a>
         @endauth
+      </div>
 
-
-    </div>
+      
 
   </header>
 

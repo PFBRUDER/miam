@@ -17,7 +17,7 @@ return new class extends Migration
             $table->foreignId('user_id');
             $table->string('receipeName');
             $table->string('file');
-            $table->integer('cookingTime');
+            $table->string('cookingTime');
             $table->string('ingredients');
             $table->string('receipeDescription');
             $table->timestamps();

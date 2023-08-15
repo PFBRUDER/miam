@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\Receipes;
 
 class ReceipesController extends Controller
 {
@@ -16,6 +17,35 @@ class ReceipesController extends Controller
         return view ('receipes.add');
 
     }
+
+    public function add_receipe_traitement ( Request $request)
+    {
+
+        // dd($request);
+        $request-> validate([
+            'user_id',
+            'receipeName' => 'required',
+            'file' => 'required',
+            'cookingTime' => 'required',
+            'ingredients' => 'required',
+            'receipeDescription' => 'required',
+        ]);
+
+        $receipe = new Receipes();
+
+        $receipe->user_id = $request->user_id;
+        $receipe->receipeName = $request->receipeName;
+        $receipe->file = $request->file;
+        $receipe->cookingTime = $request->cookingTime;
+        $receipe->ingredients = $request->ingredients;
+        $receipe->receipeDescription = $request->receipeDescription;
+
+        $receipe -> save();
+
+        return redirect('/add')->with('status', 'la recette a été ajoutée avec succès.');
+    }
+
+
         /**
      * Display a listing of the resource.
      */
