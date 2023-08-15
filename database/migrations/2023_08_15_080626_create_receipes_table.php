@@ -12,7 +12,14 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('receipes', function (Blueprint $table) {
+            $table->engine = 'InnoDB';
             $table->id();
+            $table->foreignId('user_id');
+            $table->string('receipeName');
+            $table->string('file');
+            $table->integer('cookingTime');
+            $table->string('ingredients');
+            $table->string('receipeDescription');
             $table->timestamps();
         });
     }

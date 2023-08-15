@@ -40,8 +40,8 @@
     <form action="" method="get">
       @csrf
 
-      <label for="id">
-        <input type="hidden" name="id" >
+      <label for="user_id">
+        <input type="hidden" name="user_id" >
       </label>
       <br>
       
@@ -55,8 +55,8 @@
       </label>
       <br>
       
-      <label for="CookingTime">
-        <input type="time" name="CookingTime" id="CookingTime">
+      <label for="cookingTime">
+        <input type="time" name="cookingTime" id="cookingTime">
       </label>
       <br>
       

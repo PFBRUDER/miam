@@ -23,14 +23,16 @@
           @endauth
         </div>
        @endif          
-    </div>
+      </div>
+      
+      <div class=title style=text-align:center>      
+        <h1>MIAM, le bon goût de chez vous</h1>
+        <p>Partagez vos meilleures recettes</p>
 
-    <div class=title style=text-align:center>      
-      <h1>MIAM, le bon goût de chez vous</h1>
-      <p>Partagez vos meilleures recettes</p>
 
-
-      <a href="/add">Ajouter une recette</a>
+                  @auth
+        <a href="/add">Ajouter une recette</a>
+        @endauth
 
 
     </div>
