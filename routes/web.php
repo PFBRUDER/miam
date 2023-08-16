@@ -43,5 +43,6 @@ Route::get('/add/traitement', [ReceipesController::class, 'add_receipe_traitemen
 
 
 Route::get('/update-receipe/{id}', [ReceipesController::class, 'update_receipe']);
+Route::get('/delete-receipe/{id}', [ReceipesController::class, 'delete_receipe']);
 Route::post('/update/traitement', [ReceipesController::class, 'update_receipe_traitement']);
 

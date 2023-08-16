@@ -35,7 +35,7 @@
             @auth
             <td>
               <a href="/update-receipe/{{ $receipe->id }}">Update</a>
-              <a href="#">Delete</a>
+              <a href="/delete-receipe/{{ $receipe->id }}">Delete</a>
             </td>
             @endauth
           </tr>

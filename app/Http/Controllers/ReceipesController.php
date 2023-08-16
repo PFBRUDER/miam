@@ -84,6 +84,13 @@ class ReceipesController extends Controller
 
         return redirect('/receipes')->with('status', 'la recette a été modifiée avec succès.');
     }
+    
+    public function delete_receipe($id)
+    {
+        $receipe = Receipes::find($id);
+        $receipe-> delete();
+        return redirect('/receipes')->with('status', 'la recette a été supprimée avec succès.');
+    }
 
 
 
