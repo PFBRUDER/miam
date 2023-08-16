@@ -1,18 +1,3 @@
-<!-- <!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>MIAM</title>
-</head>
-<body> -->
-
-  <!-- <header>
-    
-    </header>
-    
-    <main> -->
-
     @extends('layout')
 
     @section('content')
@@ -20,7 +5,7 @@
     <hr>
       <div class=title style=text-align:center>      
         <h2>Ajoutez votre délicieuse recette</h2>
-        <!-- <p>Partagez vos meilleures recettes</p> -->
+
   
       </div>
 
@@ -36,9 +21,11 @@
 
 
     <!-- il faudra remettre en POST après -->
-    <form action="/add/traitement" method="get">
+    <form action="/add/traitement" method="post">
       @csrf
 
+
+      <!-- value="< ?= $_GET($user['id']) ?>" -->
       <label for="user_id">
         <!-- à remettre en hidden -->
         <input type="text" name="user_id" >
@@ -78,10 +65,3 @@
     </form>
 
     @endsection
-
-  <!-- </main>
-
-  <footer></footer>
-
-</body>
-</html> -->

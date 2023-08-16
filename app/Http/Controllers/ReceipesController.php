@@ -19,9 +19,16 @@ class ReceipesController extends Controller
 
     }
 
-    public function add_receipe_traitement ( Request $request)
+    public function update_receipe($id)
     {
+        $receipe = Receipes::find($id);
+        return view ('receipes.update', compact('receipe'));
 
+    }
+
+    public function add_receipe_traitement ( Request $request)
+    {       
+        
         // dd($request);
         $request-> validate([
             'user_id',
@@ -32,9 +39,15 @@ class ReceipesController extends Controller
             'receipeDescription' => 'required',
         ]);
 
+        $user = auth()->user();  
+        $user_id = auth()->user()->id;
+
+        // dd($user);
+        
         $receipe = new Receipes();
 
-        $receipe->user_id = $request->user_id;
+
+        $receipe->user_id = $user_id;
         $receipe->receipeName = $request->receipeName;
         $receipe->file = $request->file;
         $receipe->cookingTime = $request->cookingTime;
@@ -45,6 +58,34 @@ class ReceipesController extends Controller
 
         return redirect('/add')->with('status', 'la recette a été ajoutée avec succès.');
     }
+
+    public function update_receipe_traitement (Request $request)
+    {
+        $request-> validate([
+            'user_id',
+            'receipeName' => 'required',
+            'file' => 'required',
+            'cookingTime' => 'required',
+            'ingredients' => 'required',
+            'receipeDescription' => 'required',
+        ]);
+
+        $receipe = Receipes::find($request->id);
+
+
+        $receipe->user_id = $request->user_id;
+        $receipe->receipeName = $request->receipeName;
+        $receipe->file = $request->file;
+        $receipe->cookingTime = $request->cookingTime;
+        $receipe->ingredients = $request->ingredients;
+        $receipe->receipeDescription = $request->receipeDescription;
+
+        $receipe -> update();
+
+        return redirect('/receipes')->with('status', 'la recette a été modifiée avec succès.');
+    }
+
+
 
 
         /**

@@ -4,6 +4,10 @@
 
 @section('content')
 
+ @if (session('status'))
+    <div>{{ session('status') }}</div>
+  @endif
+
   <div>
     <table class="table">
       <thead>
@@ -30,7 +34,7 @@
             <td>{{ $receipe->receipeDescription }}</td>
             @auth
             <td>
-              <a href="#">Update</a>
+              <a href="/update-receipe/{{ $receipe->id }}">Update</a>
               <a href="#">Delete</a>
             </td>
             @endauth
