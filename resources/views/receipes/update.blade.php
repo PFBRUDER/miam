@@ -24,7 +24,7 @@
 <form action="/update/traitement" method="post">
   @csrf
 
-  <input type="hidden" name="id" value="{{ $receipe->id }}">
+  <input type="text" name="id" value="{{ $receipe->id }}">
   <br>
 
 

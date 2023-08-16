@@ -11,19 +11,11 @@ return new class extends Migration
      */
     public function up(): void
     {
-
-        
-        Schema::create('receipes', function (Blueprint $table) {
+        Schema::create('images', function (Blueprint $table) {
             $table->engine = 'InnoDB';
-            $table->id();
-
-            $table->foreignId('user_id')->references('id')->on('users');
-
-            $table->string('receipeName');
-            $table->string('file');
-            $table->string('cookingTime');
-            $table->string('ingredients');
-            $table->string('receipeDescription');
+            $table->id();  
+            $table->string('path') ;
+            $table->integer('receipe_id');
             $table->timestamps();
         });
     }
@@ -33,6 +25,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('receipes');
+        Schema::dropIfExists('image');
     }
 };

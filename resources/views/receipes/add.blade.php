@@ -21,13 +21,12 @@
 
 
     <!-- il faudra remettre en POST après -->
-    <form action="/add/traitement" method="post">
+    <form action="/add/traitement" method="post" enctype="multipart/form-data"> 
       @csrf
 
-
-      <!-- value="< ?= $_GET($user['id']) ?>" -->
       <label for="user_id">
         <!-- à remettre en hidden -->
+
         <input type="text" name="user_id" >
       </label>
       <br>

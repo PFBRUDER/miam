@@ -4,6 +4,8 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\HasOne;
+
 
 class Receipes extends Model
 {
@@ -22,4 +24,15 @@ class Receipes extends Model
         'ingredients',
         'receipeDescription',
     ];
+
+    public function author() : HasOne
+    {
+        return $this->hasOne(User::class, 'id', 'user_id');
+    }
+
+    public function image(): HasOne
+    {
+        return $this->hasOne(Image::class);
+    }
+
 }

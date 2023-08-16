@@ -39,7 +39,7 @@ require __DIR__.'/auth.php';
 
 Route::get('/receipes', [ReceipesController::class, 'receipes_list']);
 Route::get('/add', [ReceipesController::class, 'add_receipe']);
-Route::get('/add/traitement', [ReceipesController::class, 'add_receipe_traitement']);
+Route::post('/add/traitement', [ReceipesController::class, 'add_receipe_traitement']);
 
 
 Route::get('/update-receipe/{id}', [ReceipesController::class, 'update_receipe']);

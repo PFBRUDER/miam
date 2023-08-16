@@ -28,6 +28,8 @@
           <tr>
             <td>{{ $receipe->id }} </td>
             <td>{{ $receipe->receipeName }}</td>
+
+
             <td>{{ $receipe->file }}</td>
             <td>{{ $receipe->cookingTime }}</td>
             <td>{{ $receipe->ingredients }}</td>
@@ -46,3 +48,5 @@
   </div>
 
   @endsection
+
+
